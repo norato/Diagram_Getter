@@ -1,0 +1,3 @@
+describe("ClassDiagram", function () {
+  // body...
+});
