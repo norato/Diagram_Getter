@@ -1,0 +1,17 @@
+#title{
+	text-align: center;
+}
+
+.class_element{
+	width: 150px;
+	height: 200px;
+	border: 2px solid black;
+}
+
+.class_attrs {
+	width: 150px;
+	height: 50px;
+	border: 2px solid black;
+	border-left-style: none;
+	border-right-style: none;
+}
