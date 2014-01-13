@@ -3,7 +3,7 @@ describe('Create a Class Diagram', function(){
   beforeEach(function(){
     setFixtures('<div id="Diagram_Getter" />');
     this.diagram = new ClassDiagram("ClassName");
-    this.diagram.draw_class();
+    this.diagram.drawClass();
   });
 
   it("The page should have a div id 'Diagram_Getter'", function(){
@@ -26,7 +26,7 @@ describe('Create a Class Diagram', function(){
     expect(title).toHaveCss({"text-align": "center"});
   });
 
-  it("When the class have attributes it have a div for add them", function (){
+  it("The attributes have a div", function (){
     expect($("#ClassNameAttrs")).toExist();
     expect($("#ClassName")).toContain($("#ClassNameAttrs"));
   })
@@ -36,7 +36,50 @@ describe('Create a Class Diagram', function(){
     expect($(".classElement").height()).toBeGreaterThan($(".classAttrs").height());
   });
 
-  it("Add attributes in the diagram", function(){
+  it("The methods have a div", function(){
+    expect($("#ClassNameMethods")).toExist();
+    expect($("#ClassName")).toContain($("#ClassNameMethods"));
   });
 
+  it("The Class borders should be greater than methods div", function(){
+    expect($(".classElement").width()).toEqual($(".classMethods").width());
+    expect($(".classElement").height()).toBeGreaterThan($(".classMethods").height());
+  });
+
+  it("Add attribute in the diagram", function(){
+    var attr1 = ["public", "attr1", 'int'];
+    this.diagram.addAttr(attr1);
+    expect($(".classAttrs")).toContain($(".attr"));
+    expect($(".classAttrs")).toContain($("#attr1"));
+    expect("public attr1: int").toBe($("#attr1").text());
+  });
+
+  it("Adding more attributes", function() {
+    var attr1 = ["public", "attr1", 'int'];
+    var attr2 = ["private", "attr2", 'String'];
+    var attr3 = ["protected", "attr3", 'Boolean'];
+    this.diagram.addAttr(attr1);
+    this.diagram.addAttr(attr2);
+    this.diagram.addAttr(attr3);
+    expect("public attr1: int").toBe($("#attr1").text());
+    expect("private attr2: String").toBe($("#attr2").text());
+    expect("protected attr3: Boolean").toBe($("#attr3").text());
+  });
+
+  it("Add method in the diagram", function(){
+    var method1 = ["public", "method1", 'int'];
+    this.diagram.addMethod(method1);
+    expect($(".classMethods")).toContain($(".method"));
+    expect($(".classMethods")).toContain($("#method1"));
+    expect("public method1: int").toBe($("#method1").text());
+  });
+
+  it("Adding more methods", function(){
+    var method1 = ["public", "method1", 'int'];
+    var method2 = ["public", "method2", 'int'];
+    this.diagram.addMethod(method1);
+    this.diagram.addMethod(method2);
+    expect("public method1: int").toBe($("#method1").text());
+    expect("public method2: int").toBe($("#method2").text());
+  });
 });

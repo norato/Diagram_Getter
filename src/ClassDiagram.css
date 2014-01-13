@@ -8,10 +8,19 @@
 	border: 2px solid black;
 }
 
-.classAttrs {
-	width: .class_element.width;
-	height: 50px;
+.classAttrs , .classMethods{
+	width: .classElement.width;
 	border: 2px solid black;
 	border-left-style: none;
 	border-right-style: none;
+}
+
+.classAttrs{
+	height: 50px;
+}
+
+.classMethods{
+	border-top-style: none;
+	border-bottom-style: none;
+	height: 125px;
 }
