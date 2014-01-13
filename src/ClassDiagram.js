@@ -1,6 +1,4 @@
-function ClassDiagram (class_name) {
-  var class_name = class_name;
-}
+function ClassDiagram () {}
 
 ClassDiagram.prototype.draw_class = function(class_name) {
   draw_div(class_name);

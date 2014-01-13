@@ -1,10 +1,22 @@
-describe('Criação de Diagrama de Classes', function(){
+describe('Create a Class Diagram', function(){
   var diagram;
   beforeEach(function(){
     setFixtures('<div id="Diagram_Getter" />');
-    this.div = $('#Diagram_Getter');
+    draw_div("ClassName");
+    set_class_name("ClassName");
   });
-  it("Verifica se possui a div com id 'Diagram_Getter'", function(){
-    expect(this.div).toEqual($('#Diagram_Getter'));
+  it("The page should have a div id 'Diagram_Getter'", function(){
+    expect($('#Diagram_Getter')).toExist();
+  });
+
+  it("When the class is setted the page should have a div class's name", function() {
+    expect($("#ClassName")).toExist();
+    expect($('#Diagram_Getter')).toContain($("#ClassName"));
+  });
+
+  it("Add the name for the class", function() {
+    expect($("#title")).toExist();
+    expect($("#ClassName")).toContain($("#title"));
+    expect("ClassName").toBe($("#title").text());    
   });
 });
