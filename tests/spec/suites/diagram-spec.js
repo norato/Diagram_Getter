@@ -2,11 +2,8 @@ describe('Create a Class Diagram', function(){
   var diagram;
   beforeEach(function(){
     setFixtures('<div id="Diagram_Getter" />');
-    drawDiv("ClassName");
-    setClassName("ClassName");
-    attrsDiv("ClassName");
-    this.diagram = new ClassDiagram();
-    this.diagram.draw_class("OtherClass");
+    this.diagram = new ClassDiagram("ClassName");
+    this.diagram.draw_class();
   });
 
   it("The page should have a div id 'Diagram_Getter'", function(){
@@ -30,18 +27,13 @@ describe('Create a Class Diagram', function(){
   });
 
   it("When the class have attributes it have a div for add them", function (){
-    expect($("#ClassNameattrs")).toExist();
+    expect($("#ClassNameAttrs")).toExist();
     expect($("#ClassName")).toContain($("#ClassNameAttrs"));
   })
 
   it("The Class borders should be greater than attr div", function(){
     expect($(".classElement").width()).toEqual($(".classAttrs").width());
     expect($(".classElement").height()).toBeGreaterThan($(".classAttrs").height());
-  });
-
-  it("Check title for ClassDiagram draw_class", function() {
-    expect($("#OtherClass #title")).toExist();
-    expect("OtherClass").toBe($("#OtherClass #title").text());
   });
 
   it("Add attributes in the diagram", function(){
