@@ -1,23 +1,24 @@
-function ClassDiagram () {}
+function ClassDiagram (className) {
+  this.name = className;
+}
 
-ClassDiagram.prototype.draw_class = function(class_name) {
-  draw_div(class_name);
-  set_class_name(class_name);
-  insert_attrs(class_name);
-};
-
-function draw_div(class_name) {
+function drawDiv(className) {
   div = $("#Diagram_Getter");
-  div.append("<div class='class_element' id='"+class_name+"'></div>");
+  div.append("<div class='classElement' id='"+className+"'></div>");
 };
 
-
-function set_class_name(class_name) {
-  class_div = $("#"+class_name+"");
-  class_div.append("<div id='title'>"+class_name+"</div>");
+function setClassName(className) {
+  classDiv = $("#"+className+"");
+  classDiv.append("<div id='title'>"+className+"</div>");
 };
 
-function insert_attrs (class_name) {
-  class_div = $("#"+class_name+"");
-  class_div.append("<div class='class_attrs' id='"+class_name+"attrs'></div>");
+function attrsDiv(className) {
+  classDiv = $("#"+className+"");
+  classDiv.append("<div class='classAttrs' id='"+className+"Attrs'></div>");
+};
+
+ClassDiagram.prototype.draw_class = function(className) {
+  drawDiv(className);
+  setClassName(className);
+  insertAttrs(className);
 };

@@ -2,13 +2,13 @@
 	text-align: center;
 }
 
-.class_element{
+.classElement{
 	width: 150px;
 	height: 200px;
 	border: 2px solid black;
 }
 
-.class_attrs {
+.classAttrs {
 	width: .class_element.width;
 	height: 50px;
 	border: 2px solid black;
