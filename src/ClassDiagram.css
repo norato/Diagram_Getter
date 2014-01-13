@@ -9,7 +9,7 @@
 }
 
 .class_attrs {
-	width: 150px;
+	width: .class_element.width;
 	height: 50px;
 	border: 2px solid black;
 	border-left-style: none;
