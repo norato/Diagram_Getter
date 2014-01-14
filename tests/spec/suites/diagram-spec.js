@@ -71,7 +71,7 @@ describe('Create a Class Diagram', function(){
     this.diagram.addMethod(method1);
     expect($(".classMethods")).toContain($(".method"));
     expect($(".classMethods")).toContain($("#method1"));
-    expect("public method1: int").toBe($("#method1").text());
+    expect("public method1(): int").toBe($("#method1").text());
   });
 
   it("Adding more methods", function(){
@@ -79,7 +79,7 @@ describe('Create a Class Diagram', function(){
     var method2 = ["public", "method2", 'int'];
     this.diagram.addMethod(method1);
     this.diagram.addMethod(method2);
-    expect("public method1: int").toBe($("#method1").text());
-    expect("public method2: int").toBe($("#method2").text());
+    expect("public method1(): int").toBe($("#method1").text());
+    expect("public method2(): int").toBe($("#method2").text());
   });
 });

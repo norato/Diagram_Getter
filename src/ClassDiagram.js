@@ -23,6 +23,6 @@ ClassDiagram.prototype.addMethod = function(arrayMethod) {
   var view = arrayMethod[0];
   var methodName = arrayMethod[1];
   var type = arrayMethod[2];
-  var text = view +" " + methodName +": " + type;
+  var text = view +" " + methodName +"(): " + type;
   $(".classMethods").append("<div class=method id='"+methodName+"'>"+text+"</div>")
 };
