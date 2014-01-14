@@ -1,26 +1,20 @@
 #title{
 	text-align: center;
+	border-bottom: 2px solid black;
 }
 
 .classElement{
-	width: 150px;
-	height: 200px;
+	width: 10%;
+	min-height: 50px;
 	border: 2px solid black;
 }
 
-.classAttrs , .classMethods{
-	width: .classElement.width;
-	border: 2px solid black;
-	border-left-style: none;
-	border-right-style: none;
-}
 
 .classAttrs{
-	height: 50px;
+	min-height: 10px;
+	border-bottom: 2px solid black;
 }
 
 .classMethods{
-	border-top-style: none;
-	border-bottom-style: none;
-	height: 125px;
+	min-height: 10px;
 }

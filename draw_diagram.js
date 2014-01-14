@@ -9,6 +9,6 @@ $(document).ready(function(){
   diagram.addAttr(attr2);
   diagram.addAttr(attr3);
 
-  var method1 = ["public", "method1", 'int'];
+  var method1 = ["publiclkjasdlkj", "method1", 'int'];
   diagram.addMethod(method1);
 });
