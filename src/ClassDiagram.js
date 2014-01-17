@@ -16,7 +16,7 @@ ClassDiagram.prototype.addAttr = function(arrayAttr){
   var attrName = arrayAttr[1];
   var type = arrayAttr[2];
   var text = view +" " + attrName +": " + type;
-  $(".classAttrs").append("<div class=attr id='"+attrName+"'>"+text+"</div>")
+  $("#"+this.name+" .classAttrs").append("<div class=attr id='"+attrName+"'>"+text+"</div>")
 };
 
 ClassDiagram.prototype.addMethod = function(arrayMethod) {
@@ -24,5 +24,5 @@ ClassDiagram.prototype.addMethod = function(arrayMethod) {
   var methodName = arrayMethod[1];
   var type = arrayMethod[2];
   var text = view +" " + methodName +"(): " + type;
-  $(".classMethods").append("<div class=method id='"+methodName+"'>"+text+"</div>")
+  $("#"+this.name+" .classMethods").append("<div class=method id='"+methodName+"'>"+text+"</div>")
 };

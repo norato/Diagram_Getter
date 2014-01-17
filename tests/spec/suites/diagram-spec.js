@@ -61,17 +61,17 @@ describe('Create a Class Diagram', function(){
     this.diagram.addAttr(attr1);
     this.diagram.addAttr(attr2);
     this.diagram.addAttr(attr3);
-    expect("public attr1: int").toBe($("#attr1").text());
-    expect("private attr2: String").toBe($("#attr2").text());
-    expect("protected attr3: Boolean").toBe($("#attr3").text());
+    expect("public attr1: int").toBe($("#ClassName #attr1").text());
+    expect("private attr2: String").toBe($("#ClassName #attr2").text());
+    expect("protected attr3: Boolean").toBe($("#ClassName #attr3").text());
   });
 
   it("Add method in the diagram", function(){
     var method1 = ["public", "method1", 'int'];
     this.diagram.addMethod(method1);
     expect($(".classMethods")).toContain($(".method"));
-    expect($(".classMethods")).toContain($("#method1"));
-    expect("public method1(): int").toBe($("#method1").text());
+    expect($(".classMethods")).toContain($("#ClassName #method1"));
+    expect("public method1(): int").toBe($("#ClassName #method1").text());
   });
 
   it("Adding more methods", function(){
@@ -79,7 +79,29 @@ describe('Create a Class Diagram', function(){
     var method2 = ["public", "method2", 'int'];
     this.diagram.addMethod(method1);
     this.diagram.addMethod(method2);
-    expect("public method1(): int").toBe($("#method1").text());
-    expect("public method2(): int").toBe($("#method2").text());
+    expect("public method1(): int").toBe($("#ClassName #method1").text());
+    expect("public method2(): int").toBe($("#ClassName #method2").text());
+  });
+
+  it("Each class has its own methods and attributes", function() {
+    var method1 = ["public", "method1", 'int'];
+    var method2 = ["public", "method2", 'int'];
+    this.diagram.addMethod(method1);
+    this.diagram.addMethod(method2);
+    expect("public method1(): int").toBe($("#ClassName #method1").text());
+    expect("public method2(): int").toBe($("#ClassName #method2").text());
+
+    var otherClass = new ClassDiagram("OtherClass");
+    otherClass.drawClass();
+    
+    var method1_other = ["public", "method1_other", 'int'];
+    var method2_other = ["public", "method2_other", 'int'];
+    otherClass.addMethod(method1_other);
+    otherClass.addMethod(method2_other);
+    expect("public method1_other(): int").toBe($("#OtherClass #method1_other").text());
+    expect("public method2_other(): int").toBe($("#OtherClass #method2_other").text());
+
+    expect("public method2_other(): int").not.toBe($("#ClassName #method2").text());
+    expect("public method2(): int").not.toBe($("#OtherClass #method2_other").text());
   });
 });
