@@ -4,7 +4,8 @@
 }
 
 .classElement{
-	width: 10%;
+	display: inline-block;
+	width: auto;
 	min-height: 50px;
 	border: 2px solid black;
 }
