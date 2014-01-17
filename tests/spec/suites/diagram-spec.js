@@ -66,6 +66,21 @@ describe('Create a Class Diagram', function(){
     expect("protected attr3: Boolean").toBe($("#ClassName #attr3").text());
   });
 
+  it("Each class has its own attributes", function() {
+    var attr1 = ["public", "attr1", 'int'];
+    this.diagram.addAttr(attr1);
+    expect("public attr1: int").toBe($("#ClassName #attr1").text());
+
+    var otherClass = new ClassDiagram("OtherClass");
+    otherClass.drawClass();
+    var attr1_other = ["public", "attr1_other", 'int'];
+    otherClass.addAttr(attr1_other);
+    expect("public attr1_other: int").toBe($("#OtherClass #attr1_other").text());
+    
+    expect("public attr1_other: int").not.toBe($("#ClassName #attr1").text());
+    expect("public attr1: int").not.toBe($("#OtherClass #attr1_other").text());
+  });
+
   it("Add method in the diagram", function(){
     var method1 = ["public", "method1", 'int'];
     this.diagram.addMethod(method1);
@@ -83,7 +98,7 @@ describe('Create a Class Diagram', function(){
     expect("public method2(): int").toBe($("#ClassName #method2").text());
   });
 
-  it("Each class has its own methods and attributes", function() {
+  it("Each class has its own methods", function() {
     var method1 = ["public", "method1", 'int'];
     var method2 = ["public", "method2", 'int'];
     this.diagram.addMethod(method1);
@@ -98,6 +113,7 @@ describe('Create a Class Diagram', function(){
     var method2_other = ["public", "method2_other", 'int'];
     otherClass.addMethod(method1_other);
     otherClass.addMethod(method2_other);
+
     expect("public method1_other(): int").toBe($("#OtherClass #method1_other").text());
     expect("public method2_other(): int").toBe($("#OtherClass #method2_other").text());
 
