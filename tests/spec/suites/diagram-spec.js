@@ -1,4 +1,4 @@
-describe('Create a Class Diagram', function(){
+describe('Create Classes', function(){
   var diagram;
   beforeEach(function(){
     setFixtures('<div id="Diagram_Getter" />');
@@ -119,5 +119,30 @@ describe('Create a Class Diagram', function(){
 
     expect("public method2_other(): int").not.toBe($("#ClassName #method2").text());
     expect("public method2(): int").not.toBe($("#OtherClass #method2_other").text());
+  });
+});
+
+describe('Associate Classes', function(){
+  var class1;
+  var class1_div;
+  var class2;
+  var class2_div;
+
+  beforeEach(function(){
+    setFixtures('<div id="Diagram_Getter" />');
+    this.class1 = new ClassDiagram("Class1");
+    this.class1.drawClass();
+    this.class1_div = $("#Class1");
+
+    this.class2 = new ClassDiagram("Class2");
+    this.class2.drawClass();
+    this.class2_div = $("#Class2");
+  });
+
+  it("Calculate the left position", function(){
+    var x = this.class1_div.offset().left;
+    var y = this.class1_div.offset().top + (this.class1_div.height() / 2);
+    expect(this.class1.leftPosition().x).toBe(x);
+    expect(this.class1.leftPosition().y).toBe(y);
   });
 });

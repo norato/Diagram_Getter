@@ -26,3 +26,11 @@ ClassDiagram.prototype.addMethod = function(arrayMethod) {
   var text = view +" " + methodName +"(): " + type;
   $("#"+this.name+" .classMethods").append("<div class=method id='"+methodName+"'>"+text+"</div>")
 };
+
+ClassDiagram.prototype.leftPosition = function() {
+  classDiv = $("#"+this.name+"");
+  return {
+    x : classDiv.offset().left,
+    y : classDiv.offset().top + (classDiv.height()/2)
+  };
+};
