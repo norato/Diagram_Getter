@@ -38,7 +38,7 @@ ClassDiagram.prototype.leftPosition = function() {
 ClassDiagram.prototype.rightPosition = function() {
   classDiv = $("#"+this.name+"");
   return {
-    x : classDiv.offset().right,
+    x : classDiv.offset().left + classDiv.width(),
     y : classDiv.offset().top + (classDiv.height()/2)
   };
 };

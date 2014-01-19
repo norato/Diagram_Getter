@@ -147,10 +147,9 @@ describe('Associate Classes', function(){
   });
 
   it("Calculate the right position", function(){
-    var x = this.class1_div.offset().right;
+    var x = this.class1_div.offset().left + this.class1_div.width();
     var y = this.class1_div.offset().top + (this.class1_div.height() / 2);
     expect(this.class1.rightPosition().x).toBe(x);
     expect(this.class1.rightPosition().y).toBe(y);
   });
-
 });
