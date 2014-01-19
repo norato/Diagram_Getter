@@ -166,4 +166,9 @@ describe('Associate Classes', function(){
     expect(this.class1.bottomPosition().x).toBe(x);
     expect(this.class1.bottomPosition().y).toBe(y);
   });
+
+  it("The Classes will be associate by canvas line", function() {
+    this.class1.associateWith(this.class2);
+    expect($("#Diagram_Getter")).toContain($(".canvas"));
+  });
 });

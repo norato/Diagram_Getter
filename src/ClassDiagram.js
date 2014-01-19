@@ -58,3 +58,21 @@ ClassDiagram.prototype.bottomPosition = function() {
     y : classDiv.offset().top + classDiv.height()
   };
 };
+
+ClassDiagram.prototype.associateWith = function(other_class) {
+  $("#Diagram_Getter").append("<canvas class='canvas'></canvas>");
+  
+  var canvas = $(".canvas")[0];
+  var context = canvas.getContext('2d');
+
+  var thisClassX = this.rightPosition().x
+  var thisClassY = this.rightPosition().y
+  var otherClassX = other_class.leftPosition().x
+  var otherClassY = other_class.leftPosition().y
+  context.beginPath();
+  context.moveTo(thisClassX,thisClassY);
+  context.lineTo(otherClassX,otherClassY);
+  context.lineWidth = 2;
+  context.strokeStyle = "#000000";
+  context.stroke();
+};

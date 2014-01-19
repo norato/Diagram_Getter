@@ -22,6 +22,8 @@
 	min-height: 10px;
 }
 
-canvas{
+.canvas{
+  width: auto;
+  height: auto;
   position: absolute;
 }

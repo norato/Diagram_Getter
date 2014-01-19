@@ -27,6 +27,8 @@ $(document).ready(function(){
   var method1_ = ["public", "method1", 'int'];
   diagram_outra.addMethod(method1_);
 
+  diagram.associateWith(diagram_outra);
+
   // var div = $("#ClassTest");
   // var initialpoint = div.offset().left + div.width()-5;
 
