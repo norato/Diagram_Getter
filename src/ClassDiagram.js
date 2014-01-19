@@ -34,3 +34,11 @@ ClassDiagram.prototype.leftPosition = function() {
     y : classDiv.offset().top + (classDiv.height()/2)
   };
 };
+
+ClassDiagram.prototype.rightPosition = function() {
+  classDiv = $("#"+this.name+"");
+  return {
+    x : classDiv.offset().right,
+    y : classDiv.offset().top + (classDiv.height()/2)
+  };
+};

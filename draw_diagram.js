@@ -26,4 +26,21 @@ $(document).ready(function(){
 
   var method1_ = ["public", "method1", 'int'];
   diagram_outra.addMethod(method1_);
+
+  // var div = $("#ClassTest");
+  // var initialpoint = div.offset().left + div.width()-5;
+
+  // var outra = $("#ClassOutra");
+  // var initialoutra = outra.offset().left;
+
+  // var canvas = document.getElementById('canvas');
+  // var context = canvas.getContext('2d');
+  // context.beginPath();
+  // context.moveTo(initialpoint, 57);
+  // context.lineTo(initialoutra, 57);
+  // context.lineWidth = 2;
+
+  // // set line color
+  // context.strokeStyle = '#000000';
+  // context.stroke();
 });
