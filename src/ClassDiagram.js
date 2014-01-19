@@ -42,3 +42,19 @@ ClassDiagram.prototype.rightPosition = function() {
     y : classDiv.offset().top + (classDiv.height()/2)
   };
 };
+
+ClassDiagram.prototype.topPosition = function() {
+  classDiv = $("#"+this.name+"");
+  return {
+    x : classDiv.offset().left + (classDiv.width() / 2),
+    y : classDiv.offset().top
+  };
+};
+
+ClassDiagram.prototype.bottomPosition = function() {
+  classDiv = $("#"+this.name+"");
+  return {
+    x : classDiv.offset().left + (classDiv.width() / 2),
+    y : classDiv.offset().top + classDiv.height()
+  };
+};

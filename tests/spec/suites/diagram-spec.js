@@ -152,4 +152,18 @@ describe('Associate Classes', function(){
     expect(this.class1.rightPosition().x).toBe(x);
     expect(this.class1.rightPosition().y).toBe(y);
   });
+
+  it("Calculate the top position", function() {
+    var x = this.class1_div.offset().left + (this.class1_div.width() / 2);
+    var y = this.class1_div.offset().top
+    expect(this.class1.topPosition().x).toBe(x);
+    expect(this.class1.topPosition().y).toBe(y);
+  });
+
+  it("Calculate the bottom position", function() {
+    var x = this.class1_div.offset().left + (this.class1_div.width() / 2);
+    var y = this.class1_div.offset().top + this.class1_div.height();
+    expect(this.class1.bottomPosition().x).toBe(x);
+    expect(this.class1.bottomPosition().y).toBe(y);
+  });
 });
