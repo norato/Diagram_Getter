@@ -5,11 +5,10 @@
 
 .classElement{
 	display: inline-block;
-	width: auto;
 	min-height: 50px;
 	border: 2px solid black;
 	position: relative;
-	margin-right: 50px;
+	margin-right: 70px;
 }
 
 
@@ -23,7 +22,7 @@
 }
 
 .canvas{
-  width: auto;
-  height: auto;
-  position: absolute;
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
 }
