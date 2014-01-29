@@ -62,19 +62,22 @@ ClassDiagram.prototype.bottomPosition = function() {
 
 ClassDiagram.prototype.associateWith = function(other_class) {
   var id = this.name + "Have" + other_class.name;
-  $("#Diagram_Getter").append("<canvas id='"+id+"'class='canvas'></canvas>");
-  
   var thisClassX = this.rightPosition().x
   var thisClassY = this.rightPosition().y
   var otherClassX = other_class.leftPosition().x
   var otherClassY = other_class.leftPosition().y
   
+  var style = "left:"+(thisClassX + 4)+"px;";
+
+  $("#Diagram_Getter").append("<canvas id='"+id+"'class='canvas' style='"+style+"'></canvas>");
+  
   var canvas = document.getElementById(id);
+  
   var context = canvas.getContext('2d');
 
   context.beginPath();
-  context.moveTo(thisClassX,thisClassY);
-  context.lineTo(otherClassX,otherClassY);
+  context.moveTo(0,thisClassY);
+  context.lineTo(70,otherClassY);
   context.lineWidth = 3;
   context.strokeStyle = "#000000";
   context.stroke();

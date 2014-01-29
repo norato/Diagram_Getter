@@ -171,4 +171,12 @@ describe('Associate Classes', function(){
     this.class1.associateWith(this.class2);
     expect($("#Diagram_Getter")).toContain($(".canvas"));
   });
+  
+  it("The canvas div will be between its classes",function(){
+    this.class1.associateWith(this.class2);
+    var canvas_left = $(".canvas")[0].offsetLeft;
+    var class_right_mod =  this.class1.rightPosition().x + 4;
+    expect(canvas_left).toEqual(class_right_mod);
+  });
+
 });

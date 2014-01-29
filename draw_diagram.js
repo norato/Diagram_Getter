@@ -14,10 +14,10 @@ $(document).ready(function(){
 
   diagram.associateWith(diagram_outra);
 
-  var diagram_test = new ClassDiagram("OtherClass");
-  diagram_test.drawClass();
-  diagram_test.addAttr(["public", "attr1", "int"]);
-  diagram_test.addMethod(["public", "method", "int"]);
+  // var diagram_test = new ClassDiagram("OtherClass");
+  // diagram_test.drawClass();
+  // diagram_test.addAttr(["public", "attr1", "int"]);
+  // diagram_test.addMethod(["public", "method", "int"]);
   
-  diagram_outra.associateWith(diagram_test);
+  // diagram_outra.associateWith(diagram_test);
 });
